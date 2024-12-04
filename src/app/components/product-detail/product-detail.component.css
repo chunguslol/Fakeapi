@@ -1,0 +1,9 @@
+.card {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  .card-img-top {
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
