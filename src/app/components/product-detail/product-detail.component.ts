@@ -19,19 +19,20 @@ export class ProductDetailComponent implements OnInit {
   product?: Product;
 
   constructor(
-    private route: ActivatedRoute,  // Para obtener el ID desde la URL
-    private productService: ProductService  // Para obtener el producto desde el servicio
+    private route: ActivatedRoute,  
+    private productService: ProductService  
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!; // Obtener el ID desde la URL
+    const id = +this.route.snapshot.paramMap.get('id')!; 
     this.productService.getProductById(id).subscribe({
       next: (data) => {
-        this.product = data;  // Asignar el producto obtenido
+        this.product = data; 
       },
       error: (err) => {
-        console.error('Error al obtener el producto:', err);  // Manejar errores
+        console.error('Error al obtener el producto:', err); 
       },
     });
   }
+  
 }

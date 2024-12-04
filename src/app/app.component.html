@@ -1,11 +1,8 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <div class="container">
-      <a class="navbar-brand" href="#">Gestor products</a>
-    </div>
+    <a class="navbar-brand" href="#">Gestor Products</a>
+    <button class="btn btn-primary ms-auto" routerLink="products/create">Crear Producto</button>
   </div>
 </nav>
 
-<div class="container p-4">
-  <app-products-table></app-products-table>
-</div>
+<router-outlet></router-outlet>

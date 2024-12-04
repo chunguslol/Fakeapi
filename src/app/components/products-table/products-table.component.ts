@@ -23,8 +23,16 @@ export class ProductsTableComponent implements OnInit {
   }
 
   deleteProduct(id: number): void {
+    const productToDelete = this.products.find(p => p.id === id);
+
     this.productService.deleteProduct(id).subscribe(() => {
       this.products = this.products.filter(p => p.id !== id);
+
+      if (productToDelete) {
+        console.log(`Producto eliminado: ID=${productToDelete.id}, Título=${productToDelete.title}`);
+      } else {
+        console.log(`No se encontró el producto con ID=${id}`);
+      }
     });
   }
 }
